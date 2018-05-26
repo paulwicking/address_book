@@ -19,6 +19,18 @@ class TestAddressBook(TestCase):
 
         assert result == test_person_name
 
+    def test_person_can_have_an_address(self):
+        test_person_name = "Bob Smith"
+        test_person_address = {'Street 1': 'Some street 1',
+                               'Street 2': 'Some more info',
+                               'Postal code': 12345,
+                               'City': 'Test City',
+                               'Country': 'Test Country'}
+        test_person = address_book.Person(test_person_name, test_person_address)
+
+        result = test_person.address
+        assert result == test_person_address
+
 
 if __name__ == '__main__':
     main()

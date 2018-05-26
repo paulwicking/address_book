@@ -2,5 +2,5 @@
 
 
 class Person:
-    def __init__(self, name):
+    def __init__(self, name, address=None):
         self.name = "Bob Smith"
