@@ -7,7 +7,7 @@ class TestAddressBook(TestCase):
         import address_book
 
     def test_can_create_a_person(self):
-        test_person = address_book.Person()
+        test_person = address_book.Person('test')
 
         assert test_person is not None
 
