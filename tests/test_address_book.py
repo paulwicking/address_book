@@ -31,6 +31,14 @@ class TestAddressBook(TestCase):
         result = test_person.address
         assert result == test_person_address
 
+    def test_person_can_have_a_phone_number(self):
+        test_person_name = "Bob Smith"
+        test_person_phone_number = "555-1234"
+        test_person = address_book.Person(name=test_person_name)
+
+        result = test_person.phone_number
+        assert result == test_person_phone_number
+
 
 if __name__ == '__main__':
     main()
