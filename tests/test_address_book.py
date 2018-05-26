@@ -7,9 +7,17 @@ class TestAddressBook(TestCase):
         import address_book
 
     def test_can_create_a_person(self):
-        person = address_book.Person()
+        test_person = address_book.Person()
 
-        assert person is not None
+        assert test_person is not None
+
+    def test_person_can_have_a_name(self):
+        test_person_name = "Bob Smith"
+        test_person = address_book.Person(name=test_person_name)
+
+        result = test_person.name
+
+        assert result == test_person_name
 
 
 if __name__ == '__main__':
