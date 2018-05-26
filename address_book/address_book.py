@@ -3,4 +3,5 @@
 
 class Person:
     def __init__(self, name, address=None):
-        self.name = "Bob Smith"
+        self.name = name
+        self.address = address
