@@ -30,6 +30,19 @@ class TestAddressBook(TestCase):
         result = test_person_with_phone_number.phone_number
         assert result == test_person_phone_number
 
+    def test_names_are_title_cased(self):
+        test_person = Person("john smith")
+        expected_name = "John Smith"
+        actual_name = test_person.name
+
+        self.assertEqual(expected_name, actual_name)
+
+    def test_person_can_have_email_address(self):
+        test_person_email = "test@example.com"
+        test_person_with_email = Person(self.test_person_name, email=test_person_email)
+
+        self.assertEqual(test_person_with_email.email, test_person_email)
+
 
 if __name__ == '__main__':
     main()
