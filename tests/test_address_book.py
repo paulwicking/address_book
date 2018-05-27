@@ -20,7 +20,7 @@ class TestAddressBook(TestCase):
         test_person_with_address = Person(self.test_person_name, test_person_address)
 
         result = test_person_with_address.address
-        assert result == test_person_address
+        self.assertEqual(test_person_address, result)
 
     def test_person_can_have_a_phone_number(self):
         test_person_phone_number = "555-1234"
@@ -28,7 +28,7 @@ class TestAddressBook(TestCase):
             self.test_person_name, phone_number=test_person_phone_number)
 
         result = test_person_with_phone_number.phone_number
-        assert result == test_person_phone_number
+        self.assertEqual(test_person_phone_number, result)
 
     def test_names_are_title_cased(self):
         test_person = Person("john smith")
@@ -54,6 +54,29 @@ class TestAddressBook(TestCase):
 
         expected = [str(test_email), str(another_test_email)]
         result = test_person_with_multiple_email_addresses.email
+
+        self.assertEqual(expected, result)
+
+    def test_test_person_can_have_multiple_addresses(self):
+        test_person_address1 = {'Street 1': 'Some street 1',
+                                'Street 2': 'Some more info',
+                                'Postal code': 12345,
+                                'City': 'Test City',
+                                'Country': 'Test Country'}
+
+        test_person_address2 = {'Street 1': 'Another street 1',
+                                'Street 2': 'Even more info',
+                                'Postal code': 67890,
+                                'City': 'Different Test City',
+                                'Country': 'Another Test Country'}
+
+        test_person_with_multiple_addresses = Person(
+            self.test_person_name,
+            address=[test_person_address1, test_person_address2]
+        )
+
+        expected = [test_person_address1, test_person_address2]
+        result = test_person_with_multiple_addresses.address
 
         self.assertEqual(expected, result)
 
