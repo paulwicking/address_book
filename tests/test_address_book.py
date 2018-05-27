@@ -80,6 +80,17 @@ class TestAddressBook(TestCase):
 
         self.assertEqual(expected, result)
 
+    def test_persons_name_is_composed_of_first_and_last_name(self):
+        test_name = {"first_name": "john",
+                     "last_name": "smith",
+                     }
+        test_person = Person(test_name)
+
+        expected_full_name = "John Smith"
+        result = test_person.name
+
+        self.assertEqual(expected_full_name, result)
+
 
 if __name__ == '__main__':
     main()
