@@ -91,6 +91,19 @@ class TestAddressBook(TestCase):
 
         self.assertEqual(expected_full_name, result)
 
+    def test_passing_name_as_string_sets_first_and_last_name(self):
+        test_person_name = "John Doe"
+        test_person = Person(test_person_name)
+
+        expected_first_name = "John"
+        expected_last_name = "Doe"
+
+        actual_first_name = test_person.first_name
+        actual_last_name = test_person.last_name
+
+        self.assertEqual(expected_first_name, actual_first_name)
+        self.assertEqual(expected_last_name, actual_last_name)
+
 
 if __name__ == '__main__':
     main()
