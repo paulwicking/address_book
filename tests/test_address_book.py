@@ -43,6 +43,20 @@ class TestAddressBook(TestCase):
 
         self.assertEqual(test_person_with_email.email, test_person_email)
 
+    def test_person_can_have_multiple_phone_numbers(self):
+        test_email = "test@example.com"
+        another_test_email = "another_test@example.com"
+
+        test_person_with_multiple_email_addresses = Person(
+            self.test_person_name,
+            email=[test_email, another_test_email]
+        )
+
+        expected = [str(test_email), str(another_test_email)]
+        result = test_person_with_multiple_email_addresses.email
+
+        self.assertEqual(expected, result)
+
 
 if __name__ == '__main__':
     main()
