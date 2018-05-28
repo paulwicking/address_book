@@ -1,5 +1,5 @@
 from address_book.address_book import Person
-from unittest import main, TestCase
+from unittest import TestCase
 
 
 class TestPerson(TestCase):
@@ -103,7 +103,3 @@ class TestPerson(TestCase):
 
         self.assertEqual(expected_first_name, actual_first_name)
         self.assertEqual(expected_last_name, actual_last_name)
-
-
-if __name__ == '__main__':
-    main()
