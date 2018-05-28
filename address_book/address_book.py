@@ -1,6 +1,14 @@
 """A simple address book."""
 
 
+class AddressBook:
+    """
+    An address book.
+    """
+    def __init__(self):
+        pass
+
+
 class Person:
     def __init__(self, name, address=None, phone_number=None, email=None):
         self.name, self.first_name, self.last_name = None, None, None
