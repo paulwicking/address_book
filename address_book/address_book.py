@@ -12,6 +12,12 @@ class AddressBook:
         """Add an entry to the address book."""
         self._entries.append(entry)
 
+    def entries(self):
+        """Returns a list of all entries in the address book."""
+        entries = [entry.name for entry in self._entries]
+
+        return entries
+
 
 class Person:
     def __init__(self, name, address=None, phone_number=None, email=None):
