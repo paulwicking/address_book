@@ -12,11 +12,12 @@ class AddressBook:
         """Add an entry to the address book."""
         self._entries.append(entry)
 
-    def entries(self):
-        """Returns a list of all entries in the address book."""
-        entries = [entry.name for entry in self._entries]
+    def get_entries(self):
+        """Returns a list of all entries in the address book.
 
-        return entries
+        :return: ``list`` of ``Person`` objects.
+        """
+        return self._entries
 
 
 class Person:

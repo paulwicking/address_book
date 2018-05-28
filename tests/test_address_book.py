@@ -20,7 +20,7 @@ class TestAddressBook(TestCase):
         self.address_book.add_entry(test_person_1)
         self.address_book.add_entry(test_person_2)
 
-        expected = ["John Doe", "Jane Doe"]
-        result = self.address_book.entries()
+        expected = [test_person_1, test_person_2]
+        result = self.address_book.get_entries()
 
         self.assertEqual(expected, result)
