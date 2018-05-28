@@ -12,3 +12,15 @@ class TestAddressBook(TestCase):
         test_person = Person("John Doe")
 
         self.address_book.add_entry(test_person)
+
+    def test_can_list_entries_in_address_book(self):
+        test_person_1 = Person("John Doe")
+        test_person_2 = Person("Jane Doe")
+
+        self.address_book.add_entry(test_person_1)
+        self.address_book.add_entry(test_person_2)
+
+        expected = ["John Doe", "Jane Doe"]
+        result = self.address_book.entries()
+
+        self.assertEqual(expected, result)
