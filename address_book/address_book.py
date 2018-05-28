@@ -3,10 +3,14 @@
 
 class AddressBook:
     """
-    An address book.
+    A simple address book.
     """
     def __init__(self):
-        pass
+        self._entries = []
+
+    def add_entry(self, entry):
+        """Add an entry to the address book."""
+        self._entries.append(entry)
 
 
 class Person:
