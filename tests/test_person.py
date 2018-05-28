@@ -103,3 +103,8 @@ class TestPerson(TestCase):
 
         self.assertEqual(expected_first_name, actual_first_name)
         self.assertEqual(expected_last_name, actual_last_name)
+
+    def test_person_repr_returns_the_name_of_the_person(self):
+        result = self.test_person.__repr__()
+
+        self.assertEqual(result, self.test_person.name)
