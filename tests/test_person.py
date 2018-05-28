@@ -2,7 +2,7 @@ from address_book.address_book import Person
 from unittest import main, TestCase
 
 
-class TestAddressBook(TestCase):
+class TestPerson(TestCase):
     def setUp(self):
         self.test_person_name = "Bob Smith"
         self.test_person = Person(name=self.test_person_name)
