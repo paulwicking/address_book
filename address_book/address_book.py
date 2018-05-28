@@ -28,6 +28,9 @@ class Person:
         self.phone_number = phone_number
         self.email = email
 
+    def __repr__(self):
+        return self.name
+
     def _parse_name(self, name):
         """
         Parse whatever is passed as ``name`` and update ``self.name`` from that.
