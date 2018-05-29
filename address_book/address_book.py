@@ -5,6 +5,7 @@ class AddressBook:
     """
     A simple address book.
     """
+
     def __init__(self):
         self._entries = []
 
@@ -21,7 +22,14 @@ class AddressBook:
 
 
 class Entry:
-    def __init__(self, name, first_name=None, last_name=None, address=None, phone_number=None, email=None):
+    def __init__(
+            self, name,
+            first_name=None,
+            last_name=None,
+            address=None,
+            phone_number=None,
+            email=None,
+    ):
         self.name = name
         self.first_name = first_name
         self.last_name = last_name
