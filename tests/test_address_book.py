@@ -1,5 +1,5 @@
 from unittest import TestCase
-from address_book.address_book import AddressBook, Person
+from address_book.address_book import AddressBook, Entry
 
 
 class TestAddressBook(TestCase):
@@ -9,13 +9,13 @@ class TestAddressBook(TestCase):
         self.assertIsInstance(self.address_book, AddressBook)
 
     def test_can_add_entry_to_address_book(self):
-        test_person = Person("John Doe")
+        test_person = Entry("John Doe")
 
         self.address_book.add_entry(test_person)
 
     def test_can_list_entries_in_address_book(self):
-        test_person_1 = Person("John Doe")
-        test_person_2 = Person("Jane Doe")
+        test_person_1 = Entry("John Doe")
+        test_person_2 = Entry("Jane Doe")
 
         self.address_book.add_entry(test_person_1)
         self.address_book.add_entry(test_person_2)

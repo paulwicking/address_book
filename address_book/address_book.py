@@ -20,9 +20,11 @@ class AddressBook:
         return self._entries
 
 
-class Person:
-    def __init__(self, name, address=None, phone_number=None, email=None):
-        self.name, self.first_name, self.last_name = None, None, None
+class Entry:
+    def __init__(self, name, first_name=None, last_name=None, address=None, phone_number=None, email=None):
+        self.name = name
+        self.first_name = first_name
+        self.last_name = last_name
         self._parse_name(name)
 
         self.address = address
@@ -39,12 +41,12 @@ class Person:
         :param name: A person's name as string or dictionary.
         :return: The method doesn't return anything.
         """
-        if type(name) == str:
+        if not (self.first_name and self.last_name) and type(name) == str:
             names_as_list = name.split()
-            self.first_name = names_as_list[0].title()
-            self.last_name = names_as_list[-1].title()
+            self.first_name = names_as_list[0]
+            self.last_name = names_as_list[-1]
         elif type(name) == dict:
-            self.first_name = name["first_name"].title()
-            self.last_name = name["last_name"].title()
+            self.first_name = name["first_name"]
+            self.last_name = name["last_name"]
 
         self.name = self.first_name + " " + self.last_name
