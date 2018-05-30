@@ -1,4 +1,5 @@
 """A simple address book."""
+from ._tools import generate_uuid
 
 
 class AddressBook:
@@ -32,6 +33,7 @@ class Entry:
             email=None,
             organization=None,
     ):
+        self._uuid = generate_uuid()
         self.name = name
         self.first_name = first_name
         self.last_name = last_name
