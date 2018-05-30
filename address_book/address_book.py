@@ -30,6 +30,7 @@ class Entry:
             address=None,
             phone_number=None,
             email=None,
+            organization=None,
     ):
         self.name = name
         self.first_name = first_name
@@ -39,6 +40,7 @@ class Entry:
         self.address = address
         self.phone_number = phone_number
         self.email = email
+        self.organization = organization
 
     def __repr__(self):
         return self.name
