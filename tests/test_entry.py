@@ -88,3 +88,11 @@ class TestEntry(TestCase):
         result = self.test_entry.__repr__()
 
         self.assertEqual(result, self.test_entry.name)
+
+    def test_that_entry_can_contain_organization_name(self):
+        test_entry = Entry(name="John Doe", organization="ACME")
+
+        expected = "ACME"
+        result = test_entry.organization
+
+        self.assertEqual(result, expected)
