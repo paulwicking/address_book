@@ -24,3 +24,10 @@ class TestAddressBook(TestCase):
         result = self.address_book.get_entries()
 
         self.assertEqual(expected, result)
+
+    def test_can_get_an_entry_by_name(self):
+        self.address_book.add_entry(Entry("John Doe"))
+
+        entry = self.address_book.get_entry("John Doe")
+
+        self.assertEqual(entry, self.address_book.get_entries()[0])
