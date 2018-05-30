@@ -21,6 +21,10 @@ class AddressBook:
         """
         return self._entries
 
+    def get_entry(self, name):
+        entry = [entry for entry in self._entries if entry.name == name]
+        return entry[0]
+
 
 class Entry:
     def __init__(
