@@ -96,3 +96,8 @@ class TestEntry(TestCase):
         result = test_entry.organization
 
         self.assertEqual(result, expected)
+
+    def test_entries_automatically_get_a_uuid(self):
+        uuid = self.test_entry._uuid
+
+        self.assertIsNotNone(uuid)
