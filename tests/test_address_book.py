@@ -31,14 +31,3 @@ class TestAddressBook(TestCase):
         entry = self.address_book.get_entry("John Doe")
 
         self.assertEqual(entry, self.address_book.get_entries()[0])
-
-
-class TestCommandLineInterface(TestCase):
-    def test_can_import_the_cli(self):
-        from address_book import cli
-
-    def test_can_get_list_of_entries_from_cli(self):
-        from address_book.cli import CLI
-
-        cli = CLI()
-        cli.show_entries()

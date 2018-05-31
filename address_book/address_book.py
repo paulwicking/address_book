@@ -58,12 +58,7 @@ class Entry:
         :param name: A person's name as string or dictionary.
         :return: The method doesn't return anything.
         """
-        if not (self.first_name and self.last_name) and type(name) == str:
-            names_as_list = name.split()
-            self.first_name = names_as_list[0]
-            self.last_name = names_as_list[-1]
-        elif type(name) == dict:
+        if type(name) == dict:
             self.first_name = name["first_name"]
             self.last_name = name["last_name"]
-
-        self.name = self.first_name + " " + self.last_name
+            self.name = self.first_name + " " + self.last_name
