@@ -35,4 +35,10 @@ class TestAddressBook(TestCase):
 
 class TestCommandLineInterface(TestCase):
     def test_can_import_the_cli(self):
-            from address_book import cli
+        from address_book import cli
+
+    def test_can_get_list_of_entries_from_cli(self):
+        from address_book.cli import CLI
+
+        cli = CLI()
+        cli.show_entries()
